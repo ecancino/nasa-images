@@ -1,0 +1,30 @@
+{
+  "name": "nasa-images",
+  "version": "1.0.0",
+  "description": "NASA Images Search",
+  "scripts": {
+    "start": "webpack-dev-server --content-base build/ --port 3000"
+  },
+  "dependencies": {
+    "aphrodite": "^1.2.3",
+    "date-fns": "^1.28.5",
+    "dbranes": "^1.0.0",
+    "dexie": "1.5.1",
+    "node-fetch": "1.7.1",
+    "ramda": "0.24.1",
+    "react": "15.6.1",
+    "react-dom": "15.6.1",
+    "redux": "3.7.2",
+    "redux-thunk": "2.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.22.0",
+    "html-webpack-plugin": "2.22.0",
+    "webpack": "^2.2.0",
+    "webpack-dev-server": "2.3.0"
+  },
+  "author": "WebpackBin",
+  "license": "ISC"
+}
