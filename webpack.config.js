@@ -1,20 +1,17 @@
-var path = require('path')
-var webpack = require('webpack')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+/* eslint-env node */
 
-var loaders = [
-  {
-    'test': /\.jsx?$/,
-    'exclude': /node_modules/,
-    'loader': 'babel-loader',
-    'query': {
-      'presets': [
-        'babel-preset-es2015'
-      ],
-      'plugins': []
-    }
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+const loaders = [{
+  test: /\.jsx?$/,
+  exclude: /node_modules/,
+  loader: 'babel-loader',
+  query: {
+    presets: [ 'babel-preset-es2015' ],
+    plugins: []
   }
-]
+}]
 
 module.exports = {
   devtool: 'eval-source-map',
