@@ -10,7 +10,7 @@ export const [
   'REMOVE_RESULT',
   'ADD_AUDIO',
   'REMOVE_AUDIO'
-];
+]
 
 export const showResults = createAction(SHOW_RESULTS)
 export const removeResult = createAction(REMOVE_RESULT)

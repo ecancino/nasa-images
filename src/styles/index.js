@@ -1,4 +1,4 @@
-import { StyleSheet, css } from 'aphrodite';
+import { StyleSheet } from 'aphrodite'
 import { merge } from 'ramda'
 
 const primaryColor = 'orangered'
@@ -43,7 +43,8 @@ export const styles = StyleSheet.create({
     background: primaryColor,
     color: contrastColor,
     margin: '10px',
-    padding: '15px'
+    padding: '15px',
+    textAlign: 'center'
   },
   playlist: container,
   audios: merge(flexContainer, {
@@ -76,5 +77,8 @@ export const styles = StyleSheet.create({
     clear: 'both',
     margin: '10px 0',
     padding: '3px 0'
+  },
+  hr: {
+    border: primaryColorBorder
   }
-});
+})

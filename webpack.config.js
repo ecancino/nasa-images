@@ -1,20 +1,20 @@
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path')
+var webpack = require('webpack')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 var loaders = [
   {
-    "test": /\.jsx?$/,
-    "exclude": /node_modules/,
-    "loader": "babel-loader",
-    "query": {
-      "presets": [
-        "babel-preset-es2015"
+    'test': /\.jsx?$/,
+    'exclude': /node_modules/,
+    'loader': 'babel-loader',
+    'query': {
+      'presets': [
+        'babel-preset-es2015'
       ],
-      "plugins": []
+      'plugins': []
     }
   }
-];
+]
 
 module.exports = {
   devtool: 'eval-source-map',
@@ -37,4 +37,4 @@ module.exports = {
   module: {
     loaders: loaders
   }
-};
+}

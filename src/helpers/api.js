@@ -2,8 +2,8 @@ import fetch from 'node-fetch'
 import { converge, merge, prop, pick, compose, evolve, head, map, path } from 'ramda'
 import { toQuery } from 'dbranes'
 
-const API_URL = 'https://images-api.nasa.gov/' // X-RateLimit-Remaining
-const apikey = '6d84hrzSRiTDgRvi19uPZoVD4fuH06Vl370ZBWzR'
+// const apikey = '6d84hrzSRiTDgRvi19uPZoVD4fuH06Vl370ZBWzR'
+const API_URL = 'https://images-api.nasa.gov/'
 export const fetchJSON = URL => fetch(URL).then(r => r.json())
 
 export const apiCall = (path, params = {}) => fetchJSON(`${API_URL}${path}${toQuery(params)}`)

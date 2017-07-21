@@ -1,16 +1,15 @@
 import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+
+import store from './store'
 import { h } from './helpers'
-import { dispatch, subscribe, getState } from './store'
 import { loadAudios } from './thunks'
 
 import App from './components/App'
 
-const renderApp = () => render(
-  h(App, getState()),
+render(
+  h(Provider, { store }, h(App)),
   document.querySelector('#main')
 )
 
-subscribe(renderApp);
-
-renderApp()
-dispatch(loadAudios())
+store.dispatch(loadAudios())
