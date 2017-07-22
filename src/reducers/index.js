@@ -1,6 +1,8 @@
 import { compose, filter, propEq, not } from 'ramda'
 import { createReducer } from '../helpers'
-import { SHOW_RESULTS, REMOVE_RESULT, ADD_AUDIO, REMOVE_AUDIO } from '../actions'
+import {
+  SHOW_RESULTS, REMOVE_RESULT, ADD_AUDIO, REMOVE_AUDIO, SET_MESSAGE
+} from '../actions'
 
 const filterById = (list, id) => filter(compose(not, propEq('nasa_id', id)), list)
 const setPayload = (_, payload) => payload
@@ -14,3 +16,7 @@ export const playlist = createReducer({
   [ADD_AUDIO]: setPayload,
   [REMOVE_AUDIO]: filterById
 }, [])
+
+export const message = createReducer({
+  [SET_MESSAGE]: setPayload
+}, '')

@@ -1,4 +1,4 @@
-# [NASA Images](https://images.nasa.gov/#/)
+# [NASA Asset Search](https://images.nasa.gov/#/)
 
 ## Made with
 
@@ -6,10 +6,10 @@
 
 ## Start
 
-```bash 
+```bash
 yarn
 ```
-```bash 
+```bash
 yarn start
 ```
 &gt; [`localhost:3000`](http://localhost:3000)

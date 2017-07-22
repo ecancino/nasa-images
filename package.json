@@ -14,6 +14,7 @@
     "node-fetch": "1.7.1",
     "ramda": "0.24.1",
     "react": "15.6.1",
+    "react-cassette-player": "^1.1.2",
     "react-dom": "15.6.1",
     "react-redux": "^5.0.5",
     "redux": "3.7.2",
@@ -21,11 +22,11 @@
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
-    "eslint": "^4.3.0",
-    "json-loader": "^0.5.4",
     "babel-loader": "7.1.1",
     "babel-preset-es2015": "^6.22.0",
+    "eslint": "^4.3.0",
     "html-webpack-plugin": "2.22.0",
+    "json-loader": "^0.5.4",
     "webpack": "3.3.0",
     "webpack-dev-server": "2.5.1"
   },

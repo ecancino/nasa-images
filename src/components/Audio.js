@@ -1,13 +1,14 @@
+import Cassette from 'react-cassette-player'
+import { merge } from 'ramda'
 import { css } from 'aphrodite'
 
-import { styles } from '../styles'
+import { styles, cassetteColors } from '../styles'
 import { h } from '../helpers'
 
-const Audio = ({ nasa_id, title, m4a, removeAudio }) =>
+const Audio = ({ nasa_id, title, asset, removeAudio }) =>
   h('li', { className: css(styles.audio), key: `audio-${nasa_id}` }, [
-    h('audio', { className: css(styles.audioPlayer), key: m4a, src: m4a, controls: 'controls' }),
-    h('button', { className: css(styles.btnDelete), key: 'btn', onClick: removeAudio, dangerouslySetInnerHTML: { __html: '&times;' } }),
-    h('br', { key: 'br' }),
+    h(Cassette, merge({ key: asset, src: asset }, cassetteColors)),
+    h('button', { className: css(styles.btnDelete), key: 'btn', onClick: removeAudio }, 'X'),
     h('h4', { className: css(styles.audioTitle, styles.orangered), key: 'spn' }, title)
   ])
 

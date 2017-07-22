@@ -1,6 +1,6 @@
 import Dexie from 'dexie'
 
 const db = new Dexie('Audios')
-db.version(1).stores({ audios: 'nasa_id,title,m4a,date_created' })
+db.version(1).stores({ audios: 'nasa_id,title,asset,date_created,media_type' })
 
 export const audios = db.table('audios')

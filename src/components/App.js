@@ -1,11 +1,13 @@
 import { h } from '../helpers'
+import Message from './Message'
 import Search from './Search'
 import PlayList from './PlayList'
 
-const App = ({ playlist, search }) =>
+const App = () =>
   h('section', { className: 'App' }, [
-    h(Search, { search, key: 'search' }),
-    h(PlayList, { playlist, key: 'list' })
+    h(Message, { key: 'message' }),
+    h(Search, { key: 'search' }),
+    h(PlayList, { key: 'list' })
   ])
 
 export default App
