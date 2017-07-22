@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "NASA Images Search",
   "scripts": {
-    "start": "webpack-dev-server --content-base build/ --port 3000"
+    "start": "webpack-dev-server --content-base build/ --port 3000",
+    "build": "webpack ."
   },
   "dependencies": {
     "aphrodite": "^1.2.3",
