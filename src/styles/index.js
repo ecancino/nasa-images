@@ -13,7 +13,7 @@ export const cassetteColors = {
 
 const primaryColorBorder = `1px solid ${primaryColor}`
 const container = {
-  width: '1024px',
+  width: '80%',
   margin: '0 auto'
 }
 
@@ -49,7 +49,9 @@ export const styles = StyleSheet.create({
     listStyle: 'none'
   }),
   result: {
-    width: '28%',
+    width: '33%',
+    maxWidth: '300px',
+    minWidth: '250px',
     overflow: 'hidden',
     background: contrastColor,
     color: primaryColor,
@@ -70,8 +72,8 @@ export const styles = StyleSheet.create({
   }),
   btnDelete: {
     position: 'absolute',
-    top: '68px',
-    right: '6px',
+    top: '21.7%',
+    right: '1.1%',
     height: '24px',
     width: '24px',
     float: 'right',
@@ -90,7 +92,9 @@ export const styles = StyleSheet.create({
     }
   },
   audio: {
-    width: '30%',
+    width: '33%',
+    maxWidth: '300px',
+    minWidth: '250px',
     position: 'relative'
   },
   audioTitle: {

@@ -9,7 +9,7 @@ import { audioSearch } from '../thunks'
 
 const SearchForm = ({ results, searchTerm, clearResults }) => {
   let textInput = null
-  return h('section', { className: css(styles.search) }, [
+  return h('section', {}, [
     h('input', {
       className: css(styles.input),
       type: 'text',
