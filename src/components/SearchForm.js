@@ -3,9 +3,12 @@ import { compose, prop, when, propEq } from 'ramda'
 import { css } from 'aphrodite'
 
 import { styles } from '../styles'
-import { h } from '../helpers'
+import { h, createI18n } from '../helpers'
 import { showResults } from '../actions'
 import { audioSearch } from '../thunks'
+
+const SearchButton = createI18n('search')
+const ClearButton = createI18n('clear')
 
 const SearchForm = ({ results, searchTerm, clearResults }) => {
   let textInput = null
@@ -20,9 +23,9 @@ const SearchForm = ({ results, searchTerm, clearResults }) => {
         textInput.value = null
       })
     }),
-    h('button', { className: css(styles.btn), key: 'search-button', onClick: () => searchTerm(textInput) }, 'Search'),
+    h('button', { className: css(styles.btn), key: 'search-button', onClick: () => searchTerm(textInput) }, SearchButton),
     results ?
-      h('button', { className: css(styles.btn), key: 'clear-button', onClick: () => clearResults([]) }, 'Clear') :
+      h('button', { className: css(styles.btn), key: 'clear-button', onClick: () => clearResults([]) }, ClearButton) :
       null
   ])
 }

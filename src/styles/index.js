@@ -119,5 +119,8 @@ export const styles = StyleSheet.create({
     padding: '20px',
     textAlign: 'center',
     borderRadius: '20px'
-  }
+  },
+  footer: merge(flexContainer, {
+
+  }),
 })

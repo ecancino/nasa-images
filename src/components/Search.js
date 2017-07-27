@@ -5,12 +5,14 @@ import { css } from 'aphrodite'
 import SearchForm from './SearchForm'
 import Result from './Result'
 import { styles } from '../styles'
-import { h } from '../helpers'
+import { h, createI18n } from '../helpers'
 import { fetchAudio } from '../thunks'
+
+const SearchTitle = createI18n('application')
 
 const Search = ({ search, getAudio }) => {
   return h('section', { className: css(styles.search) }, [
-    h('h1', { className: css(styles.searchTitle), key: 'search-title' }, 'NASA Asset Search'),
+    h('h1', { className: css(styles.searchTitle), key: 'search-title' }, SearchTitle),
     h(SearchForm, { key: 'search-form' }),
     h('hr', { className: css(styles.hr),key: 'hr-' }),
     h('ul', { className: css(styles.results), key: 'results' },
