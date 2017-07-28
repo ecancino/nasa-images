@@ -14,10 +14,7 @@ addLocaleData([...en, ...es, ...fr])
 export let locale = browserLocale()
 
 export const messages = {
-  en: enUS,
-  es: esES,
-  fr: frFR,
-  'en-US': enUS,
-  'es-ES': esES,
-  'fr-FR': frFR
+  en: enUS, 'en-US': enUS,
+  es: esES, 'es-ES': esES,
+  fr: frFR, 'fr-FR': frFR
 }[locale]
