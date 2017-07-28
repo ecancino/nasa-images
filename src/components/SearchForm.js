@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import { compose, prop, when, propEq } from 'ramda'
 import { css } from 'aphrodite'
+import { injectIntl } from 'react-intl'
 
 import { styles } from '../styles'
 import { h, createI18n } from '../helpers'
@@ -10,7 +11,7 @@ import { audioSearch } from '../thunks'
 const SearchButton = createI18n('search')
 const ClearButton = createI18n('clear')
 
-const SearchForm = ({ results, searchTerm, clearResults }) => {
+const SearchForm = ({ results, searchTerm, clearResults, intl }) => {
   let textInput = null
   return h('section', {}, [
     h('input', {
@@ -21,7 +22,8 @@ const SearchForm = ({ results, searchTerm, clearResults }) => {
       onKeyPress: when(propEq('key', 'Enter'), () => {
         searchTerm(textInput)
         textInput.value = null
-      })
+      }),
+      placeholder: intl.formatMessage({ id: 'searchPlaceholder' })
     }),
     h('button', { className: css(styles.btn), key: 'search-button', onClick: () => searchTerm(textInput) }, SearchButton),
     results ?
@@ -36,4 +38,6 @@ const dispatchProps = dispatch => ({
   clearResults: compose(dispatch, showResults)
 })
 
-export default connect(stateProps, dispatchProps)(SearchForm)
+const enhance = compose(injectIntl, connect(stateProps, dispatchProps))
+
+export default enhance(SearchForm)

@@ -29,7 +29,8 @@ const input = {
   border: primaryColorBorder,
   height: '24px',
   fontSize: '21px',
-  margin: '0 10px 0 0'
+  margin: '0 10px 0 0',
+  width: '50%'
 }
 
 export const styles = StyleSheet.create({
@@ -68,7 +69,8 @@ export const styles = StyleSheet.create({
     padding: '10px 0'
   }),
   btn: merge(input, {
-    height: '32px'
+    height: '32px',
+    width: 150
   }),
   btnDelete: {
     position: 'absolute',
