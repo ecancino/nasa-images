@@ -30,7 +30,7 @@ const input = {
   height: '24px',
   fontSize: '21px',
   margin: '0 10px 0 0',
-  width: '50%'
+  width: '30%'
 }
 
 export const styles = StyleSheet.create({
