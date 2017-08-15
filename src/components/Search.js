@@ -14,7 +14,7 @@ const Search = ({ search, getAudio }) => {
   return h('section', { className: css(styles.search) }, [
     h('h1', { className: css(styles.searchTitle), key: 'search-title' }, SearchTitle),
     h(SearchForm, { key: 'search-form' }),
-    h('hr', { className: css(styles.hr),key: 'hr-' }),
+    h('hr', { className: css(styles.hr), key: 'hr-' }),
     h('ul', { className: css(styles.results), key: 'results' },
       map(result => h(Result, merge(result, { key: result.nasa_id, getAudio: () => getAudio(result) })), search)
     )

@@ -1,29 +1,31 @@
 import { connect } from 'react-redux'
-import { map, merge, compose, curry } from 'ramda'
+import { lifecycle } from 'recompose'
+import { map, merge, compose } from 'ramda'
 import { css } from 'aphrodite'
 
 import Audio from './Audio'
 import { styles } from '../styles'
 import { h } from '../helpers'
-import { deleteAudio } from '../thunks'
+import { dispatch } from '../store'
+import { loadAudios } from '../thunks'
 
-const createAudio = curry((removeAudio, audio) =>
-  h(Audio, merge(audio, {
-    key: audio.nasa_id,
-    removeAudio: () => removeAudio(audio.nasa_id)
-  }))
-)
+const createAudio = audio => h(Audio, merge(audio, { key: audio.nasa_id }))
 
-const PlayList = ({ playlist, removeAudio }) =>
+const PlayList = ({ playlist }) =>
   h('section', { className: css(styles.playlist) }, [
     h('ul', { className: css(styles.audios), key: 'list' },
-      map(createAudio(removeAudio), playlist)
+      map(createAudio, playlist)
     )
   ])
 
-const stateProps = ({ playlist }) => ({ playlist })
-const dispatchProps = dispatch => ({
-  removeAudio: compose(dispatch, deleteAudio)
+const onMount = lifecycle({
+  componentDidMount() {
+    dispatch(loadAudios())
+  }
 })
 
-export default connect(stateProps, dispatchProps)(PlayList)
+const stateProps = ({ playlist }) => ({ playlist })
+
+const enhance = compose(onMount, connect(stateProps))
+
+export default enhance(PlayList)
