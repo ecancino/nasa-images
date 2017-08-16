@@ -3,5 +3,8 @@ export default {
   search: 'Buscar',
   clear: 'Borrar',
   copyright: 'Derechos de autor © {year} {author}',
-  searchPlaceholder: 'Busca algo!'
+  searchPlaceholder: 'Busca algo!',
+  alreadyAdded: 'Ya agregado. Eliminando...',
+  searching: 'Buscando...',
+  fetchFailed: 'Error de búsqueda de audio para {file}'
 }
